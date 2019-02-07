@@ -11,8 +11,9 @@ def cut_up(texts, interval):
     for file in texts:
         with open(file) as f:
             for line in f:
-                splitLetter = line.split()
-                separateWords.append(splitLetter)
+                splitLetter += line.split()
+            separateWords.append(splitLetter)
+        splitLetter = []
     for i in separateWords:
         if len(i) < smallestLetter:
             smallestLetter = len(i)
